@@ -62,9 +62,9 @@ class Map():
         # print(f'Cell ({r}, {c})')
         # print(neighbor_matrix)
         for neighbor_cell in neighbor_matrix:
-            neighbor = self.mines[r + neighbor_cell[0]][c + neighbor_cell[1]]
-            # if neighbor != 'b':
-            # neighbor += 1
+            # neighbor = self.mines[r + neighbor_cell[0]][c + neighbor_cell[1]]
+            if self.mines[r + neighbor_cell[0]][c + neighbor_cell[1]] != 'b':
+                self.mines[r + neighbor_cell[0]][c + neighbor_cell[1]] += 1
     
     def set_numbers_into_cells(self):
         
