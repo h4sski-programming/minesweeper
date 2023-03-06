@@ -8,7 +8,7 @@ class Cell_mine():
         self.clicked = False
         self.value = 0
         self.width = Settings.width
-        
+    
         
     def display_cell(self, ttk, frame):
         self.label = ttk.Label(frame, text=self.value, width=self.width)

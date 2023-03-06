@@ -18,8 +18,15 @@ class Mine_map():
             for c in range(self.columns):
                 row += (Cell_mine(r, c),)
             self.map += (row,)
-        
         # print(self.map)
+        self.check_neighbors()
+        
+    def check_neighbors(self):
+        # print(self.map)
+        # print(type(self.map))
+        for r in self.map:
+            for c in r:
+                pass
         
     def draw_map(self):
         for r in range(self.rows):
