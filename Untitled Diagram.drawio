@@ -1,1 +1,25 @@
-<mxfile host="app.diagrams.net" modified="2023-03-04T22:38:48.168Z" agent="5.0 (X11; Ubuntu)" version="21.0.2" etag="ct1LZTUI1wNo6C-FYlDb" type="github"><diagram name="Page-1" id="5U4ZQ7DfF-FGeHSH0eRr">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-03-04T22:46:04.234Z" agent="5.0 (X11; Ubuntu)" etag="5-FNm3t0x-0H7id3J5or" version="21.0.2" type="github">
+  <diagram name="Page-1" id="5U4ZQ7DfF-FGeHSH0eRr">
+    <mxGraphModel dx="1360" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ciEmkqsHEa0hmPP_8YWY-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ciEmkqsHEa0hmPP_8YWY-1" target="ciEmkqsHEa0hmPP_8YWY-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciEmkqsHEa0hmPP_8YWY-1" value="Main" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="80" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ciEmkqsHEa0hmPP_8YWY-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ciEmkqsHEa0hmPP_8YWY-2" target="ciEmkqsHEa0hmPP_8YWY-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ciEmkqsHEa0hmPP_8YWY-2" value="Mine_map" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="110" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ciEmkqsHEa0hmPP_8YWY-3" value="Mines_matrix" style="html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="110" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
