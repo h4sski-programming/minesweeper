@@ -8,7 +8,7 @@
       "name": "Python: Current File",
       "type": "python",
       "request": "launch",
-      "program": "${file}/main.py",
+      "program": "${file}/main",
       "console": "integratedTerminal",
       "justMyCode": true
     },
@@ -16,7 +16,7 @@
       "name": "Python: Minesweeper",
       "type": "python",
       "request": "launch",
-      "module": "main.py",
+      "module": "main",
       "console": "integratedTerminal",
       "justMyCode": true
     }
