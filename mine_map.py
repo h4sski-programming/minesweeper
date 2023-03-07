@@ -25,8 +25,10 @@ class Mine_map():
         # print(self.map)
         # print(type(self.map))
         for r in self.map:
-            for c in r:
-                pass
+            print(r)
+            print(type(r))
+            # for c in r:
+            #     pass
         
     def draw_map(self):
         for r in range(self.rows):
