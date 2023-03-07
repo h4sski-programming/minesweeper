@@ -36,26 +36,39 @@
 
 # root.mainloop()
 
-from tkinter import *
-from tkinter import ttk
 
-class Main():
-    def __init__(self) -> None:
-        self.window = Tk()
-        self.window.title('Testing')
+# 
+# from tkinter import *
+# from tkinter import ttk
+
+# class Main():
+#     def __init__(self) -> None:
+#         self.window = Tk()
+#         self.window.title('Testing')
         
-        self.frame = ttk.Frame(self.window, padding=10)
-        self.frame.grid()
+#         self.frame = ttk.Frame(self.window, padding=10)
+#         self.frame.grid()
         
-        self.label1 = ttk.Label(self.frame, text='Hello from the testing.py')
-        self.label1.grid()
-        self.label2 = ttk.Label(self.frame, text='2nd Layout without grid atributes')
-        self.label2.grid()
-        self.button = ttk.Button(self.frame, text='remove 1st line')
-        self.button['command'] =  self.label1.destroy
-        self.button.grid()
+#         self.label1 = ttk.Label(self.frame, text='Hello from the testing.py')
+#         self.label1.grid()
+#         self.label2 = ttk.Label(self.frame, text='2nd Layout without grid atributes')
+#         self.label2.grid()
+#         self.button = ttk.Button(self.frame, text='remove 1st line')
+#         self.button['command'] =  self.label1.destroy
+#         self.button.grid()
         
         
-        self.window.mainloop()
+#         self.window.mainloop()
     
-Main()
+# Main()
+
+
+
+
+# 
+tuple = ((1, 2), (1, 2), (1, 2), (1, 2), (1, 2))
+
+for t in tuple:
+    print(t)
+    for a in t:
+        print(a)
