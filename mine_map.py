@@ -1,4 +1,5 @@
-
+import math
+from random import randint, random
 
 from settings import Settings
 from cell_mine import Cell_mine
@@ -19,93 +20,69 @@ class Mine_map():
                 row += (Cell_mine(r, c),)
             self.map += (row,)
         # print(self.map)
-        self.check_neighbors()
-        
+        self.get_bombs()
+        self.set_numders_near_bomb()
+    
+    
+    def get_bombs(self):
+        bomb_number = math.ceil(self.rows * self.columns * Settings.mines_ratio)
+        for i in range(bomb_number):
+            random_row = randint(0, self.rows - 1)
+            random_column = randint(0, self.columns - 1)
+            if self.map[random_row][random_column].value == 'b':
+                i -= 1
+                continue
+            self.map[random_row][random_column].value = 'b'
+    
+    
+    def set_numders_near_bomb(self):
+        for row_temp in range(self.rows):
+            for column_temp in range(self.columns):
+                if self.map[row_temp][column_temp].value == 'b':
+                    print(row_temp, column_temp)
+                    self.check_cell_neighbors((row_temp, column_temp))
+    
+    
     def check_neighbors(self):
         # print(self.map)
         # print(type(self.map))
         for row in self.map:
             # print(row)
             # print(type(row))
-            for cell in row:
-                print(cell.position)
-                self.check_cell_neighbors(cell.position)
+            for column in row:
+                # print(cell.position)
+                self.check_cell_neighbors(column.position)
     
     
     def check_cell_neighbors(self, position):
-        # neighbor_matrix = [[-1, -1], [-1, 0], [-1, 1],
-        #                   [0, -1], [0, 1],
-        #                   [1, -1], [1, 0], [1, 1]]
-        
-        # # removing if row = 0
-        # if position[0] == 0:
-        #     for index, neighbor in enumerate(neighbor_matrix):
-        #         if neighbor[0] < 0 :
-        #             neighbor_matrix[index].pop
-                    
-        # # remving if row == last row
-        # if position[0] == len(self.map):
-        #     for index, neighbor in enumerate(neighbor_matrix):
-        #         if neighbor[0] > len(self.map) :
-        #             neighbor_matrix[index].pop
-        
-        # # removing if column == 0
-        # if position[1] == 0:
-        #     for index, neighbor in enumerate(neighbor_matrix):
-        #         if neighbor[1] < 0 :
-        #             neighbor_matrix[index].pop
-        
-        # # removing if column == last column
-        # if position[1] == len(self.map):
-        #     for index, neighbor in enumerate(neighbor_matrix):
-        #         if neighbor[1] > len(self.map[0]) :
-        #             neighbor_matrix[index].pop
-        
-        
-        
+        matrix = self.generate_neighbour_matrix(position=position)
+        for n in matrix:
+            if type(self.map[position[0] + n[0]][position[1] + n[1]].value) == type(0):
+                self.map[position[0] + n[0]][position[1] + n[1]].value += 1
+    
+    
+    def generate_neighbour_matrix(self, position):
         neighbor_matrix = []
-        
-        # x_min_max = [-1, 1]
-        # y_min_max = [-1, 1]
-        # if position[0] <= 0:
-        #     x_min_max[0] = 0
-        # if position[0] >= len(self.map)-1:
-        #     x_min_max[1] = 0
-            
-        # if position[1] <= 0:
-        #     y_min_max[0] = 0
-        # if position[1] >= len(self.map[0])-1:
-        #     y_min_max[1] = 0
-        
-        # for x in range(x_min_max[0], x_min_max[1]):
-        #     for y in range(y_min_max[0], y_min_max[1]):
-        #         neighbor_matrix.append((x, y))
-        
-        
         neighbor_border = {'row': {'min': -1, 'max': 1}, 
                            'column': {'min': -1, 'max': 1}}
-        
         # rows
         if position[0] <= 0:
             neighbor_border['row']['min'] = 0
-        if position[0] >= len(self.map)-1:
+        if position[0] >= self.rows-1:
             neighbor_border['row']['max'] = 0
-        
         # columns
         if position[1] <= 0:
             neighbor_border['column']['min'] = 0
-        if position[1] >= len(self.map[0])-1:
+        if position[1] >= self.columns-1:
             neighbor_border['column']['max'] = 0
+        # print(neighbor_border)
         
-        print(neighbor_border)
+        for row in range(neighbor_border['row']['min'], neighbor_border['row']['max']+1):
+            for column in range(neighbor_border['column']['min'], neighbor_border['column']['max']+1):
+                neighbor_matrix.append((row, column))
         
-        for row in range(neighbor_border['row']['min'], neighbor_border['row']['max']):
-            for column in range(neighbor_border['column']['min'], neighbor_border['column']['max']):
-                print(f'row = {row}, column = {column}')
-                # neighbor_matrix.append((row, column))
-        
-        print(neighbor_matrix)
-        
+        # print(neighbor_matrix)
+        return neighbor_matrix
         
     
     def draw_map(self):
